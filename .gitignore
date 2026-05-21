@@ -1,0 +1,49 @@
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment and local config
+.env
+.env.*
+*.env
+*.local
+config.local.yaml
+*.local.yaml
+
+# Logs
+*.log
+logs/
+
+# Go build artifacts
+bin/
+build/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test and coverage artifacts
+*.test
+*.out
+coverage.out
+coverage.html
+cover.html
+
+# Temporary files and caches
+tmp/
+temp/
+.cache/
+.gocache/
+
+# Optional local tool binaries
+tools/bin/
