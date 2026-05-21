@@ -179,6 +179,10 @@ Grafana доступна на:
 http://localhost:3000
 ```
 
+Пример dashboard-а с метриками:
+
+![Grafana dashboard](metrics/grafana.png)
+
 Dashboard можно импортировать из файла:
 
 ```text
