@@ -124,6 +124,7 @@ func (s *Service) Update(ctx context.Context) error {
 	total, err := s.xkcd.LastID(ctx)
 	if err != nil {
 		s.log.Error("grps update error: LastID", "error", err)
+		return err
 	}
 
 	if ctx.Err() != nil {

@@ -6,23 +6,26 @@ import (
 	"log/slog"
 	"maps"
 	"slices"
+	"sync"
 )
 
 type Service struct {
-	log   *slog.Logger
-	db    DB
-	words Words
-	index *Index
+	log       *slog.Logger
+	db        DB
+	words     Words
+	index     *Index
+	indexLock sync.Mutex
 }
 
 func NewService(
 	log *slog.Logger, db DB, words Words,
 ) (*Service, error) {
 	return &Service{
-		log:   log,
-		db:    db,
-		words: words,
-		index: NewIndex(),
+		log:       log,
+		db:        db,
+		words:     words,
+		index:     NewIndex(),
+		indexLock: sync.Mutex{},
 	}, nil
 }
 
@@ -84,6 +87,9 @@ func (s *Service) SearchIndex(ctx context.Context, phrase string, limit int) ([]
 }
 
 func (s *Service) BuildIndex(ctx context.Context) error {
+	s.indexLock.Lock()
+	defer s.indexLock.Unlock()
+
 	newIndex := NewIndex()
 
 	lastID, err := s.db.GetLastID(ctx)
