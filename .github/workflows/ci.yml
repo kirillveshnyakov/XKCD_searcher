@@ -1,0 +1,51 @@
+name: Project CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      check:
+        description: "Which checks should be run"
+        required: true
+        default: "test"
+        type: choice
+        options:
+          - test
+          - lint
+          - test-and-lint
+
+permissions:
+  contents: read
+
+jobs:
+  project:
+    name: Project
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        if: ${{ inputs.check == 'lint' || inputs.check == 'test-and-lint' }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.25.x"
+
+      - name: Install lint tools
+        if: ${{ inputs.check == 'lint' || inputs.check == 'test-and-lint' }}
+        run: |
+          go install github.com/yoheimuta/protolint/cmd/protolint@latest
+          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b "$(go env GOPATH)/bin" v2.4.0
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Lint project
+        if: ${{ inputs.check == 'lint' || inputs.check == 'test-and-lint' }}
+        run: make lint
+
+      - name: Test project
+        if: ${{ inputs.check == 'test' || inputs.check == 'test-and-lint' }}
+        run: make container_runtime=docker test
+
+      - name: Cleanup
+        if: always()
+        run: docker compose down -v --remove-orphans
