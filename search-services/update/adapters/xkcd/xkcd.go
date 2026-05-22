@@ -9,13 +9,13 @@ import (
 	"strings"
 	"time"
 
-	"yadro.com/course/closers"
-	"yadro.com/course/update/core"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/closers"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/core"
 )
 
 const (
 	lastPath   = "/info.0.json"
-	maxRetries = 5
+	maxRetries = 10
 	backoff    = 1 * time.Second
 )
 
@@ -46,11 +46,14 @@ func (c *Client) doReq(ctx context.Context, method string, url string, respStatu
 	attempt := 0
 	for {
 		resp, err = c.client.Do(req)
-		if err == nil {
+		if err == nil && resp.StatusCode == respStatus {
 			break
 		}
 		attempt++
 		if attempt >= maxRetries {
+			if resp != nil && resp.StatusCode == http.StatusNotFound {
+				return nil, core.ErrNotFound
+			}
 			return nil, fmt.Errorf("failed to request comics: %v", err)
 		}
 		c.log.Error("failed to connect, sleeping and retrying", "error", err)

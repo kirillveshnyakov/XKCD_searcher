@@ -13,14 +13,14 @@ import (
 	"syscall"
 	"time"
 
+	wordspb "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/words"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/words/config"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/words/words"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/reflection"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
-	wordspb "yadro.com/course/proto/words"
-	"yadro.com/course/words/config"
-	"yadro.com/course/words/words"
 )
 
 const (

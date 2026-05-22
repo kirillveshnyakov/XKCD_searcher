@@ -12,16 +12,16 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/closers"
+	updatepb "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/update"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/adapters/db"
+	updategrpc "github.com/kirillveshnyakov/XKCD_searcher/search-services/update/adapters/grpc"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/adapters/words"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/adapters/xkcd"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/config"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/core"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
-	"yadro.com/course/closers"
-	updatepb "yadro.com/course/proto/update"
-	"yadro.com/course/update/adapters/db"
-	updategrpc "yadro.com/course/update/adapters/grpc"
-	"yadro.com/course/update/adapters/words"
-	"yadro.com/course/update/adapters/xkcd"
-	"yadro.com/course/update/config"
-	"yadro.com/course/update/core"
 )
 
 const (

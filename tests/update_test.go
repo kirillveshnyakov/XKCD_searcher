@@ -52,7 +52,7 @@ func TestUpdate(t *testing.T) {
 	wg.Wait()
 	require.NoError(t, err1, "error from update")
 	require.NoError(t, err2, "error from update")
-	require.NoError(t, err3, "erorr from status")
+	require.NoError(t, err3, "error from status")
 	require.True(t,
 		res1 == http.StatusOK && res2 == http.StatusAccepted ||
 			res2 == http.StatusOK && res1 == http.StatusAccepted,

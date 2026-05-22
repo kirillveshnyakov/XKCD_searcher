@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"yadro.com/course/search/core"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/search/core"
 )
 
 type initiator struct {

@@ -122,7 +122,7 @@ const file_proto_words_words_proto_rawDesc = "" +
 	"\x05words\x18\x01 \x03(\tR\x05words2s\n" +
 	"\x05Words\x128\n" +
 	"\x04Ping\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x00\x120\n" +
-	"\x04Norm\x12\x13.words.WordsRequest\x1a\x11.words.WordsReply\"\x00B\x1eZ\x1cyadro.com/course/proto/wordsb\x06proto3"
+	"\x04Norm\x12\x13.words.WordsRequest\x1a\x11.words.WordsReply\"\x00BGZEgithub.com/kirillveshnyakov/XKCD_searcher/search-services/proto/wordsb\x06proto3"
 
 var (
 	file_proto_words_words_proto_rawDescOnce sync.Once

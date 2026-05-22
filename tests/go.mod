@@ -1,4 +1,4 @@
-module yadro.com/tests
+module github.com/kirillveshnyakov/XKCD_searcher/tests
 
 go 1.25.1
 

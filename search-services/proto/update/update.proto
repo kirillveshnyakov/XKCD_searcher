@@ -4,7 +4,8 @@ package update;
 
 import "google/protobuf/empty.proto";
 
-option go_package = "yadro.com/course/proto/update";
+option go_package =
+  "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/update";
 
 message StatsReply {
   int64 words_total = 1;

@@ -3,11 +3,11 @@ package grpc
 import (
 	"context"
 
+	searchpb "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/search"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/search/core"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
-	searchpb "yadro.com/course/proto/search"
-	"yadro.com/course/search/core"
 )
 
 func NewServer(service core.Searcher) *server {

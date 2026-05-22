@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"log/slog"
 
+	wordspb "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/words"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/search/core"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
-	wordspb "yadro.com/course/proto/words"
-	"yadro.com/course/search/core"
 )
 
 type Client struct {

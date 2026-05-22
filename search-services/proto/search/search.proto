@@ -4,7 +4,8 @@ package search;
 
 import "google/protobuf/empty.proto";
 
-option go_package = "yadro.com/course/proto/search";
+option go_package =
+  "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/search";
 
 message Comic {
   int64 id = 1;

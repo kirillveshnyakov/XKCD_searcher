@@ -10,7 +10,7 @@ import (
 
 	"github.com/VictoriaMetrics/metrics"
 
-	"yadro.com/course/api/core"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/core"
 )
 
 func writeJSON(w http.ResponseWriter, message any) error {

@@ -206,7 +206,7 @@ const file_proto_update_update_proto_rawDesc = "" +
 	"\x06Status\x12\x16.google.protobuf.Empty\x1a\x13.update.StatusReply\"\x00\x12:\n" +
 	"\x06Update\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x00\x125\n" +
 	"\x05Stats\x12\x16.google.protobuf.Empty\x1a\x12.update.StatsReply\"\x00\x128\n" +
-	"\x04Drop\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x00B\x1fZ\x1dyadro.com/course/proto/updateb\x06proto3"
+	"\x04Drop\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x00BHZFgithub.com/kirillveshnyakov/XKCD_searcher/search-services/proto/updateb\x06proto3"
 
 var (
 	file_proto_update_update_proto_rawDescOnce sync.Once

@@ -6,8 +6,8 @@ import (
 
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/jmoiron/sqlx"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/core"
 	"github.com/lib/pq"
-	"yadro.com/course/update/core"
 )
 
 type DB struct {

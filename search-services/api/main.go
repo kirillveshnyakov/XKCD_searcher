@@ -12,15 +12,15 @@ import (
 	"syscall"
 	"time"
 
-	AAA "yadro.com/course/api/adapters/aaa"
-	"yadro.com/course/api/adapters/rest"
-	"yadro.com/course/api/adapters/rest/middleware"
-	"yadro.com/course/api/adapters/search"
-	"yadro.com/course/api/adapters/update"
-	"yadro.com/course/api/adapters/words"
-	"yadro.com/course/api/config"
-	"yadro.com/course/api/core"
-	"yadro.com/course/closers"
+	AAA "github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/aaa"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/rest"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/rest/middleware"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/search"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/update"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/adapters/words"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/config"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/api/core"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/closers"
 )
 
 const (

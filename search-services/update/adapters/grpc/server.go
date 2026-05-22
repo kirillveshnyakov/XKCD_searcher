@@ -5,11 +5,11 @@ import (
 	"errors"
 	"fmt"
 
+	updatepb "github.com/kirillveshnyakov/XKCD_searcher/search-services/proto/update"
+	"github.com/kirillveshnyakov/XKCD_searcher/search-services/update/core"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/types/known/emptypb"
-	updatepb "yadro.com/course/proto/update"
-	"yadro.com/course/update/core"
 )
 
 func NewServer(service core.Updater) *Server {

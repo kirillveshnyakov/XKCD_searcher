@@ -1,4 +1,4 @@
-module yadro.com/course
+module github.com/kirillveshnyakov/XKCD_searcher/search-services
 
 go 1.25.1
 
